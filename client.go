@@ -208,7 +208,7 @@ func (q *QueueClient) DeleteMessage(msg *Message) error {
 	return handleStatusCode(resp)
 }
 
-const azureQueueURL = "https://%s.servicebus.windows.net:443/%s/"
+const azureQueueURL = "http://%s.servicebus.windows.net:443/%s/"
 
 func (q *QueueClient) createRequest(path string, method string) (*http.Request, error) {
 	url := fmt.Sprintf(azureQueueURL, q.Namespace, q.QueueName) + path
